@@ -17,7 +17,12 @@ namespace CsharpPractice.Chapter7
             }
             for (int i = 0; i < 10; i++)
             {
-                Console.WriteLine("Array ["+i+"] contains "+arr[i]+"\n");
+                Console.Write("Array ["+i+"] contains "+arr[i]+"\n");
+                
+            }
+            foreach (var item in arr)
+            {
+                Console.WriteLine( item);
             }
         }
     }

@@ -1,0 +1,7 @@
+﻿.......................Jagged Array............................
+   Please do some work on the jagged array in the C# because at
+this time jagged array declaration as given in the book is not
+working.
+1:-Go through on-line documentation or any other medium for this
+2:-If you don't get the solution yet. Then don't worry do some 
+   exercise for efficient memory management  in your algorithms.
