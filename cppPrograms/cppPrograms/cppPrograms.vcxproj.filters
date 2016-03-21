@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Self Practice">
+      <UniqueIdentifier>{b36a2386-46f4-4854-9bda-b9e01c976937}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BinaryTree">
+      <UniqueIdentifier>{16319e76-8b5c-4a1b-9656-7c32525eb4f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Practice">
+      <UniqueIdentifier>{e2c42e1e-470a-4037-a2c5-ec2b274f8ebd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Sorting">
+      <UniqueIdentifier>{9ddcf6b0-5b65-4693-ab32-ea875a3cede9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ClassPractice">
+      <UniqueIdentifier>{0dbedc35-ed04-439a-9ae2-86c344ef12f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CodeChef">
+      <UniqueIdentifier>{3bae7cdc-b8ed-4c88-a197-6034e37c6da5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="linkList.cpp">
+      <Filter>Source Files\Self Practice</Filter>
+    </ClCompile>
+    <ClCompile Include="StackWithArray.cpp">
+      <Filter>Source Files\Self Practice</Filter>
+    </ClCompile>
+    <ClCompile Include="StackWithLinkList.cpp">
+      <Filter>Source Files\Self Practice</Filter>
+    </ClCompile>
+    <ClCompile Include="InfixToPostfixGeekForGeek.cpp">
+      <Filter>Source Files\Self Practice</Filter>
+    </ClCompile>
+    <ClCompile Include="EvalutionOfPostfixGeekForGeek.cpp">
+      <Filter>Source Files\Self Practice</Filter>
+    </ClCompile>
+    <ClCompile Include="ReverseOfStringUsingStack.cpp">
+      <Filter>Source Files\Self Practice</Filter>
+    </ClCompile>
+    <ClCompile Include="BST1.cpp">
+      <Filter>Source Files\BinaryTree</Filter>
+    </ClCompile>
+    <ClCompile Include="BSTDeletion.cpp">
+      <Filter>Source Files\BinaryTree</Filter>
+    </ClCompile>
+    <ClCompile Include="LinkListWithClass.cpp">
+      <Filter>Source Files\Practice</Filter>
+    </ClCompile>
+    <ClCompile Include="Practice.cpp">
+      <Filter>Source Files\Practice</Filter>
+    </ClCompile>
+    <ClCompile Include="Binary.cpp">
+      <Filter>Source Files\Sorting</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectionSort.cpp">
+      <Filter>Source Files\Sorting</Filter>
+    </ClCompile>
+    <ClCompile Include="BubbleSort.cpp">
+      <Filter>Source Files\Sorting</Filter>
+    </ClCompile>
+    <ClCompile Include="InsertionSort.cpp">
+      <Filter>Source Files\Sorting</Filter>
+    </ClCompile>
+    <ClCompile Include="MeargeSort.cpp">
+      <Filter>Source Files\Sorting</Filter>
+    </ClCompile>
+    <ClCompile Include="Time.cpp">
+      <Filter>Source Files\ClassPractice</Filter>
+    </ClCompile>
+    <ClCompile Include="Practice1.cpp">
+      <Filter>Source Files\ClassPractice</Filter>
+    </ClCompile>
+    <ClCompile Include="Source.cpp">
+      <Filter>Source Files\Practice</Filter>
+    </ClCompile>
+    <ClCompile Include="HomeDelivary.cpp">
+      <Filter>Source Files\CodeChef</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Time.h">
+      <Filter>Source Files\ClassPractice</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
