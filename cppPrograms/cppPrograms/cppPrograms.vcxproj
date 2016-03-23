@@ -150,6 +150,7 @@
     <ClCompile Include="BST1.cpp" />
     <ClCompile Include="BSTDeletion.cpp" />
     <ClCompile Include="BubbleSort.cpp" />
+    <ClCompile Include="CheckPair.cpp" />
     <ClCompile Include="EvalutionOfPostfixGeekForGeek.cpp" />
     <ClCompile Include="HomeDelivary.cpp" />
     <ClCompile Include="InfixToPostfixGeekForGeek.cpp" />
@@ -161,6 +162,7 @@
     <ClCompile Include="Practice1.cpp" />
     <ClCompile Include="ReverseOfStringUsingStack.cpp" />
     <ClCompile Include="SelectionSort.cpp" />
+    <ClCompile Include="SimpleGraph.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="StackWithArray.cpp" />
     <ClCompile Include="StackWithLinkList.cpp" />

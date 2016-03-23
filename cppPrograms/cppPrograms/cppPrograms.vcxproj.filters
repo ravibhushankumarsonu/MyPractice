@@ -30,6 +30,9 @@
     <Filter Include="Source Files\Graph">
       <UniqueIdentifier>{a6d8df5d-d278-4bdd-a84f-78b81a18a22b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Array">
+      <UniqueIdentifier>{3a1cc156-74eb-42ae-b1c3-1eab1f09d215}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="linkList.cpp">
@@ -88,6 +91,12 @@
     </ClCompile>
     <ClCompile Include="HomeDelivary.cpp">
       <Filter>Source Files\CodeChef</Filter>
+    </ClCompile>
+    <ClCompile Include="SimpleGraph.cpp">
+      <Filter>Source Files\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="CheckPair.cpp">
+      <Filter>Source Files\Array</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

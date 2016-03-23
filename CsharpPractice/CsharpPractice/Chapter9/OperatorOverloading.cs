@@ -100,6 +100,31 @@ namespace CsharpPractice.Chapter9
             temp.z = ob1.z - i;
             return temp;
         }
+        //Operator overloading for < 
+        // between two ThreeD objects define on their distance from the origin
+        public static bool operator <(ThreeD ob1,ThreeD ob2)
+        {
+            if (Math.Sqrt(ob1.x * ob1.x + ob1.y * ob1.y + ob1.z * ob1.z) <
+                Math.Sqrt(ob2.x * ob2.x + ob2.y * ob2.y + ob2.z * ob2.z))
+                return true;
+            else
+                return false;
+        }
+        //Operator overloading for > 
+        // between two ThreeD objects define on their distance from the origin
+        public static bool operator >(ThreeD ob1, ThreeD ob2)
+        {
+            if (Math.Sqrt(ob1.x * ob1.x + ob1.y * ob1.y + ob1.z * ob1.z) >
+                Math.Sqrt(ob2.x * ob2.x + ob2.y * ob2.y + ob2.z * ob2.z))
+                return true;
+            else
+                return false;
+        }
+        //Overloading for conversion
+        public static implicit operator int(ThreeD ob)
+        {
+            return ob.x * ob.y * ob.z;
+        }
         public void Show()
         {
             Console.WriteLine("x :{0},y :{1},z :{2}",x,y,z);
@@ -162,6 +187,14 @@ namespace CsharpPractice.Chapter9
             ob3 = 10 + ob1;
             Console.WriteLine("Now object 3 contains :");
             ob3.Show();
+
+            //Check for < overload
+            if(ob1<ob2)
+                Console.WriteLine("Object 1 is less than object 2.");
+            else
+                Console.WriteLine("Object 2 is less or equal to object 1.");
+
+            Console.WriteLine("int equivalent of ob1 is {0}",(int)ob1);
         }
     }
 }
