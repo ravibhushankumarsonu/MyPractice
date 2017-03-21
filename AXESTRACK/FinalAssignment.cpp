@@ -104,3 +104,6 @@ int main()
 	}
 	return 0;
 }
+
+//Time complexity is n
+//Space Complexity is n
