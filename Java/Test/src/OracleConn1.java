@@ -7,8 +7,10 @@ import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.JSchException;
 import com.jcraft.jsch.Session;
 
+import java.util.*;
+import java.io.*;
 
-public class OracleConn {
+public class OracleConn1 {
     private static void doSshTunnel(String strSshUser, String strSshPassword, String strSshHost, int nSshPort,
             String strRemoteHost, int nLocalPort, int nRemotePort) throws JSchException {
         final JSch jsch = new JSch();
@@ -39,10 +41,10 @@ public class OracleConn {
                                                                     // server
             int nLocalPort = 3332; // local port number use to bind SSH tunnel
             int nRemotePort = 1521; // remote port number of your database
-            String strDbUser = "cradba as sysdba"; // database loging username
+            String strDbUser = "cradba"; // database loging username
             String strDbPassword = "cradba"; // database login password
 
-            OracleConn.doSshTunnel(strSshUser, strSshPassword, strSshHost, nSshPort, strRemoteHost, nLocalPort,
+            OracleConn1.doSshTunnel(strSshUser, strSshPassword, strSshHost, nSshPort, strRemoteHost, nLocalPort,
                     nRemotePort);
 
             Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -51,12 +53,29 @@ public class OracleConn {
             Connection con = DriverManager.getConnection("jdbc:oracle:thin:@illin3351:1521:TESTODO1", strDbUser,strDbPassword);
             System.out.println("Sql connection is done :)");
             Statement stmt=con.createStatement();
-            ResultSet rs=stmt.executeQuery("SELECT * FROM cradba.data");
-            //System.out.println(rs.toString());
-            while(rs.next())
-            {
-            	System.out.println(rs.getString(1)+" "+rs.getString(2));
+            
+            ArrayList<String> str=new ArrayList<String>();
+            try(BufferedReader br=new BufferedReader(new FileReader("oracle.txt"))){
+            	String line;
+            	while((line=br.readLine())!=null){
+            		str.add(line);
+            	}
+            }catch(Exception e){
+            	System.out.println(e);
             }
+            Iterator itr=str.iterator();
+            System.out.println(str.size());
+            while(itr.hasNext())
+            {
+            	ResultSet rs=stmt.executeQuery(itr.next().toString());
+            	//rs.last();
+                System.out.println(itr.next().toString());
+                while(rs.next())
+                {
+                	System.out.println(rs.getString(1)+" "+rs.getString(2));
+                }
+            }
+            
             con.close();
             
         } catch (Exception e) {

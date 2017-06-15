@@ -7,8 +7,10 @@ import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.JSchException;
 import com.jcraft.jsch.Session;
 
+import java.util.*;
+import java.io.*;
 
-public class OracleConn {
+public class CreateUser {
     private static void doSshTunnel(String strSshUser, String strSshPassword, String strSshHost, int nSshPort,
             String strRemoteHost, int nLocalPort, int nRemotePort) throws JSchException {
         final JSch jsch = new JSch();
@@ -42,7 +44,7 @@ public class OracleConn {
             String strDbUser = "cradba as sysdba"; // database loging username
             String strDbPassword = "cradba"; // database login password
 
-            OracleConn.doSshTunnel(strSshUser, strSshPassword, strSshHost, nSshPort, strRemoteHost, nLocalPort,
+            CreateUser.doSshTunnel(strSshUser, strSshPassword, strSshHost, nSshPort, strRemoteHost, nLocalPort,
                     nRemotePort);
 
             Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -50,13 +52,25 @@ public class OracleConn {
             
             Connection con = DriverManager.getConnection("jdbc:oracle:thin:@illin3351:1521:TESTODO1", strDbUser,strDbPassword);
             System.out.println("Sql connection is done :)");
-            Statement stmt=con.createStatement();
-            ResultSet rs=stmt.executeQuery("SELECT * FROM cradba.data");
-            //System.out.println(rs.toString());
-            while(rs.next())
-            {
-            	System.out.println(rs.getString(1)+" "+rs.getString(2));
+            Statement stmt=con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE);
+            con.setAutoCommit(false);
+            stmt.addBatch(" declare userexit integer;"
+            		+ " begin select count(*) into userexit from dba_users where username='ravi';  "
+            		+ "if(userexit=1) then execute immediate 'drop user ravi cascade'; end if; end;");
+            stmt.addBatch("Create user ravi identified by ravi default tablespace USR temporary"
+            		+ " tablespace TEMP profile default account unlock");
+            //ArrayList<String> str=new ArrayList<String>();
+            try(BufferedReader br=new BufferedReader(new FileReader("createUser.txt"))){
+            	String line;
+            	while((line=br.readLine())!=null){
+            		stmt.addBatch(line+" ravi");
+            	}
+            }catch(Exception e){
+            	System.out.println(e);
             }
+            stmt.executeLargeBatch();
+            con.commit();
+            System.out.println("User created");
             con.close();
             
         } catch (Exception e) {
