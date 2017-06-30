@@ -1,0 +1,5 @@
+grant connect to
+grant resource to
+grant create materialized view to
+grant create view to
+grant unlimited tablespace to
